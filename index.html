@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="jscss/pokedex.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="site-header">
+        <img src="images/Poké_Ball_icon.svg.png" alt="Pokeball Icon" class="pokeball-header-icon">
+        <h1>POKEDEX</h1>
+    </header>
+
+    <div class="background-blur" aria-hidden="true"></div>
+
+    <div class="loader-overlay" id="loader-overlay" aria-hidden="true" role="status" aria-live="polite">
+        <div class="loader"></div>
+        <p class="loader-text">Loading Pokedex...</p>
+    </div>
+
+    <div class="pokedex-container">
+
+        <main class="details-panel" id="details-panel" aria-live="polite" aria-atomic="true">
+            <div class="details-placeholder">
+                <p>Select a Pokémon from the list or search!</p>
+            </div>
+        </main>
+
+        <aside class="list-panel">
+            <h2 class="list-panel-title">Your Pokémon</h2>
+            <div class="search-filter-container">
+                <label for="search-input" class="visually-hidden">Search Pokémon by Name or ID</label>
+                <input type="text" id="search-input" placeholder="Search Name or ID..." aria-label="Search Pokémon by Name or ID">
+                <div class="type-filters" id="type-filters" role="group" aria-labelledby="type-filter-label">
+                    <span id="type-filter-label" class="visually-hidden">Filter Pokémon by type</span>
+                    <button class="type-filter-button active" data-type="all">All</button>
+                  
+                </div>
+               
+                <div class="special-filters">
+                    <button class="special-filter-button" id="favorites-filter-button" data-filter="favorites">
+                        Favorite Pokemons
+                    </button>
+                </div>
+            </div>
+            <div class="pokemon-grid" id="pokemon-grid" aria-live="polite" aria-atomic="true">
+                <div class="list-loading">Loading Pokémon list...</div>
+            </div>
+        </aside>
+    </div>
+
+    <script src="jscss/pokedex.js"></script>
+</body>
+</html>
